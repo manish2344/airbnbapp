@@ -1,0 +1,57 @@
+/* src/app/listings/[id]/RequestToBook.module.css */
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+  }
+  
+  h1 {
+    text-align: center;
+  }
+  
+  .tripDetails,
+  .paymentMethods,
+  .upiSection,
+  .cancellationPolicy,
+  .groundRules,
+  .priceDetails {
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    padding: 15px;
+    border-radius: 5px;
+  }
+  
+  .paymentMethods label {
+    display: block;
+    margin-bottom: 10px;
+  }
+  
+  .inputField {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  textarea {
+    height: 80px;
+  }
+  
+  .requestButton {
+    display: block;
+    width: 100%;
+    padding: 15px;
+    background-color: #0070f3;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .requestButton:hover {
+    background-color: #005bb5;
+  }
+  

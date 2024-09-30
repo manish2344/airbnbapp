@@ -1,0 +1,131 @@
+/* app/listings/[id]/ListingDetail.module.css */
+
+.container {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+}
+
+.imageContainer {
+  width: 100%;
+  max-height: 500px;
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+.image {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.details {
+  margin-top: 20px;
+}
+
+.title {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.host {
+  margin-top: 10px;
+  font-size: 1.2rem;
+}
+
+.status {
+  margin-top: 5px;
+  color: green;
+  font-weight: 600;
+}
+
+.description,
+.highlights {
+  margin-top: 20px;
+}
+
+.description h2,
+.highlights h2,
+.booking h2 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+.highlights ul {
+  list-style-type: disc;
+  padding-left: 20px;
+}
+
+.booking {
+  margin-top: 30px;
+  padding: 20px;
+  border: 1px solid #eaeaea;
+  border-radius: 10px;
+}
+
+.price {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.priceAmount {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.priceLabel {
+  margin-left: 5px;
+  color: #555;
+}
+
+.priceTotal {
+  font-size: 1.2rem;
+}
+
+.dates,
+.guestCount {
+  margin-top: 20px;
+}
+
+.dateInput,
+.numberInput {
+  width: 100%;
+  padding: 8px;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.bookButton {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #ff385c;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.bookButton:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.reservationNote {
+  margin-top: 10px;
+  color: #555;
+}
+
+.error {
+  color: red;
+  text-align: center;
+  margin-top: 50px;
+  font-size: 1.5rem;
+}
+
+.loading {
+  text-align: center;
+  margin-top: 50px;
+  font-size: 1.5rem;
+}
