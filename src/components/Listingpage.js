@@ -156,19 +156,6 @@
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 
-// Hardcoded Images Data
-const hardcodedImages = {
-  1: 'https://images.unsplash.com/photo-1611095973515-9fe6f13a065b',
-  2: 'https://images.unsplash.com/photo-1533042426-0d2656a75dba',
-  3: 'https://images.unsplash.com/photo-1560067174-894c636e15b0',
-  4: 'https://images.unsplash.com/photo-1522071820081-009f0129c71c',
-  5: 'https://images.unsplash.com/photo-1568307847449-1fa2db09f1b3',
-  6: 'https://images.unsplash.com/photo-1540418100513-993fcf83b14f',
-  7: 'https://images.unsplash.com/photo-1515378791036-0648a3ef77b2',
-  8: 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e',
-  9: 'https://images.unsplash.com/photo-1572314493468-b8fdd5d2354a',
-};
-
 // ListingCard Component
 const ListingCard = ({ image, title, host, status, price, category }) => {
   return (
@@ -196,7 +183,7 @@ const ListingCard = ({ image, title, host, status, price, category }) => {
   );
 };
 
-function ListingPage({ selectedCategory }) {
+function ListingPage({ selectedCategory ,searchParams}) {
   const [listings, setListings] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -268,10 +255,25 @@ function ListingPage({ selectedCategory }) {
   }, [token]);
 
   // Filter listings based on selected category
-  const filteredListings = selectedCategory
-    ? listings.filter((listing) => listing.category === selectedCategory)
-    : listings;
+  // const filteredListings = selectedCategory
+  //   ? listings.filter((listing) => listing.category === selectedCategory)
+  //   : listings;
+  const filteredListings = listings.filter((listing) => {
+    const matchesCategory = selectedCategory ? listing.category === selectedCategory : true;
+    const matchesLocation = searchParams.location
+      ? listing.location.toLowerCase().includes(searchParams.location.toLowerCase())
+      : true;
 
+    return matchesCategory && matchesLocation;
+  });
+//  const filteredListings = listings.filter((listing) => {
+//     const matchesCategory = selectedCategory ? listing.category === selectedCategory : true;
+//     const matchesLocation = searchParams.location
+//       ? listing.location.toLowerCase().includes(searchParams.location.toLowerCase())
+//       : true;
+
+//     return matchesCategory && matchesLocation;
+//   });
   return (
     <div className="container mx-auto px-4 py-8">
       <h1 className="text-3xl font-bold mb-6">Listings</h1>
@@ -286,8 +288,8 @@ function ListingPage({ selectedCategory }) {
               <Link href={`/listings/${listing.id}`} key={listing.id} legacyBehavior>
                 <a>
                   <ListingCard
-                    image={hardcodedImages[listing.id]} // Use hardcoded image based on 
-                    // image={listing.image}
+                    // image={hardcodedImages[listing.id]} // Use hardcoded image based on 
+                    image={listing.image_url}
                     title={listing.title}
                     host={listing.host}
                     status={listing.status}

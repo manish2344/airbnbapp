@@ -1,111 +1,3 @@
-
-
-// import React, { useState } from 'react';
-
-// const SearchBar = ({ onSearch }) => {
-//   const [location, setLocation] = useState('');
-//   const [checkIn, setCheckIn] = useState('');
-//   const [checkOut, setCheckOut] = useState('');
-//   const [guests, setGuests] = useState(1);
-
-//   const handleSearch = () => {
-//     onSearch({ location, checkIn, checkOut, guests }); // Pass search parameters to the parent component
-//   };
-
-//   return (
-//     <div className="flex flex-col md:flex-row items-center justify-between p-4 bg-gray-100 rounded">
-//       <input
-//         type="text"
-//         placeholder="Where are you going?"
-//         value={location}
-//         onChange={(e) => setLocation(e.target.value)}
-//         className="border p-2 rounded w-full md:w-1/4 mr-2"
-//       />
-//       <input
-//         type="date"
-//         value={checkIn}
-//         onChange={(e) => setCheckIn(e.target.value)}
-//         className="border p-2 rounded w-full md:w-1/4 mr-2"
-//       />
-//       <input
-//         type="date"
-//         value={checkOut}
-//         onChange={(e) => setCheckOut(e.target.value)}
-//         className="border p-2 rounded w-full md:w-1/4 mr-2"
-//       />
-//       <input
-//         type="number"
-//         min="1"
-//         value={guests}
-//         onChange={(e) => setGuests(e.target.value)}
-//         className="border p-2 rounded w-full md:w-1/4 mr-2"
-//         placeholder="Guests"
-//       />
-//       <button onClick={handleSearch} className="ml-2 p-2 bg-blue-500 text-white rounded">
-//         Search
-//       </button>
-//     </div>
-//   );
-// };
-
-// export default SearchBar;
-
-// import React, { useState } from 'react';
-
-// const SearchBar = ({ onSearch }) => {
-//   const [location, setLocation] = useState('');
-//   const [checkIn, setCheckIn] = useState('');
-//   const [checkOut, setCheckOut] = useState('');
-//   const [guests, setGuests] = useState(1);
-
-//   const handleSearch = () => {
-//     onSearch({ location, checkIn, checkOut, guests });
-//   };
-
-//   return (
-//     <div className="flex flex-col md:flex-row justify-between items-center bg-white rounded-lg shadow-md p-4 mb-4">
-//       <input
-//         type="text"
-//         placeholder="Where are you going?"
-//         value={location}
-//         onChange={(e) => setLocation(e.target.value)}
-//         className="border border-gray-300 rounded-lg p-2 w-full md:w-1/4 mr-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
-//       />
-//       <div className="flex flex-col md:flex-row">
-//         <input
-//           type="date"
-//           value={checkIn}
-//           onChange={(e) => setCheckIn(e.target.value)}
-//           className="border border-gray-300 rounded-lg p-2 w-full md:w-1/4 mr-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
-//         />
-//         <input
-//           type="date"
-//           value={checkOut}
-//           onChange={(e) => setCheckOut(e.target.value)}
-//           className="border border-gray-300 rounded-lg p-2 w-full md:w-1/4 mr-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
-//         />
-//       </div>
-//       <input
-//         type="number"
-//         min="1"
-//         value={guests}
-//         onChange={(e) => setGuests(e.target.value)}
-//         className="border border-gray-300 rounded-lg p-2 w-full md:w-1/4 mr-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
-//         placeholder="Guests"
-//       />
-//       <button
-//         onClick={handleSearch}
-//         className="bg-blue-500 text-white rounded-lg p-2 md:w-1/5 hover:bg-blue-600 transition"
-//       >
-//         Search
-//       </button>
-//     </div>
-//   );
-// };
-
-// export default SearchBar;
-
-
 import React, { useState } from 'react';
 import { Search, Calendar, Users } from 'lucide-react';
 
@@ -116,6 +8,7 @@ const SearchBar = ({ onSearch }) => {
   const [guests, setGuests] = useState(1);
 
   const handleSearch = () => {
+    // Pass the search parameters to the parent component
     onSearch({ location, checkIn, checkOut, guests });
   };
 
